@@ -67,6 +67,7 @@ body {
   border-radius: 50%;
   padding: 12px;
   cursor: pointer;
+  display: none;
 }
 
 .back-to-top:active{

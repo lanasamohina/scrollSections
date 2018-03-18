@@ -19,7 +19,11 @@ $(function () {
 
   $(document).on('scroll', function (ev) {
     let scrollPoint = $(this).scrollTop(); // сколько мы проскролили
-
+    if(scrollPoint<400){
+      $('.back-to-top').hide();
+    } else {
+        $('.back-to-top').show();
+    }
     sections.each(function () {
       let offsetTop = getOffsetTop(this);// позицию секции относительно верха документа
       if (scrollPoint > offsetTop) { // проскролили ли мы больше, чем позиция секции
@@ -29,6 +33,8 @@ $(function () {
         $('.nav__link').removeClass('nav__link--active'); // забрали у всех классы
         $(`.nav__link[href="#${id}"]`).addClass('nav__link--active'); // даем активный класс ссылке, у которой в href лежит id секции
       }
+
+
     });
 
   });
